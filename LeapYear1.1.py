@@ -46,11 +46,9 @@ def is_leap_year():
 
 def how_many_days_in_a_month(month):
     if is_leap_year() == False:
-        numbers_of_days = days_in_a_month[month - 1]
-        return numbers_of_days
+        return days_in_a_month[month - 1]
     else:
-        numbers_of_days = days_in_a_month_leap_year[month -1]
-        return numbers_of_days
+        return days_in_a_month_leap_year[month -1]
 
 def which_day_of_the_year(day):
     i = 1
