@@ -28,47 +28,47 @@ def check_if_day_is_valid():
     while True:           
         try:
             day = int(input("Enter day: "))
-            if is_leap_year() == False and day > 0 and day <= days_in_a_month[month-1]:
+            if is_leap_year(year) == False and day > 0 and day <= days_in_a_month[month-1]:
                 return day
-            elif is_leap_year() == True and day > 0 and day <= days_in_a_month_leap_year[month-1]:
+            elif is_leap_year(year) == True and day > 0 and day <= days_in_a_month_leap_year[month-1]:
                 return day
             else:
                 print("Enter value in range 1 -",days_in_a_month[month-1])
         except ValueError:
                 print("Provide an integer value")
 
-def is_leap_year():
+def is_leap_year(year):
 
     if ((year%4 == 0 and year%100 != 0) or year%400 == 0):
         return True
     else:
         return False
 
-def how_many_days_in_a_month(month):
-    if is_leap_year() == False:
+def how_many_days_in_a_month(year,month):
+    if is_leap_year(year) == False:
         return days_in_a_month[month - 1]
     else:
         return days_in_a_month_leap_year[month -1]
 
-def which_day_of_the_year(day):
+def which_day_of_the_year(year,month,day):
     i = 1
-    day_of_the_year = 0
+    day_of_the_year = day
     while i < month:
         day_of_the_year += days_in_a_month[i-1]
         i += 1
-    if is_leap_year() == True and month > 2:
+    if is_leap_year(year) == True and month > 2:
         day_of_the_year += 1
-    day_of_the_year += day
     return day_of_the_year
 
-year = check_if_year_is_valid()
-month = check_if_month_is_valid()
-day = check_if_day_is_valid()
-
-if is_leap_year() == True:
-    print(year,"is a leap year")
-else:
-    print(year,"is not a leap year")
-
-print(months[month-1],"have",how_many_days_in_a_month(month),"days")
-print("Day of the year:",which_day_of_the_year(day))
+if __name__ == "__main__":
+    year = check_if_year_is_valid()
+    month = check_if_month_is_valid()
+    day = check_if_day_is_valid()
+    
+    if is_leap_year(year) == True:
+        print(year,"is a leap year")
+    else:
+        print(year,"is not a leap year")
+    
+    print(months[month-1],"have",how_many_days_in_a_month(year,month),"days")
+    print("Day of the year:",which_day_of_the_year(year,month,day))
