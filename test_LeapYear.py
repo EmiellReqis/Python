@@ -1,6 +1,5 @@
 import pytest
 import LeapYear1
-from LeapYear1 import how_many_days_in_a_month
 
 def test_how_many_days_in_a_month():
     for x in range(1,13):
