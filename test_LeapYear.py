@@ -20,7 +20,3 @@ def test_which_day_of_the_year():
 
 def test_which_day_of_the_year_fail():
     assert LeapYear1.which_day_of_the_year(3,12,31) == 366
-
-@pytest.mark.parametrize("test_input,expected", [(23, 23), (10000, ValueError), ("sd", ValueError), (10, 10)]) 
-def test_input(test_input, expected):
-    assert LeapYear1.check_if_year_is_valid(test_input) == expected
