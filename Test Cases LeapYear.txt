@@ -1,0 +1,58 @@
+Valid tests
+	1.Enter valid year
+		Input Year in range 1 - 9999
+		Check if output is valid
+
+	2. Enter valid month
+		Input month in range 1 - 12
+		Check if output is valid
+
+	3. Enter valid day
+		Input day in range 1 - days_in_a_month
+						   1 - days_in_a_month_leap_year
+		Check if output is valid
+		
+	4. Check if it's a leap year with valid input
+		Enter valid leap year
+		check if output is True
+	
+	5. Check if it's not a leap year with valid input
+		Enter valid non-leap year
+		check if output is False
+	
+	6. Check if days in month are correct
+		Enter valid year and month
+		Check if output shows correct number of days in chosen month
+	
+	7. Check number of days in February in Leap year
+		Enter valid leap year
+		check if output shows 29
+	
+	8. Check number of days in February in non-leap year
+		Enter valid non-leap year
+		check if output shows 28
+	
+	9. Check which_day_of_the_year is correct
+		Enter valid year, month and day example year = 4 month = 2 day = 29
+		Check if output shows correct value example = 60
+	
+	10. End to End
+		Enter valid year, month and day example year = 2020 month = 12 day = 31
+		Check if in output:
+			Year is Leap or not
+			Number of days in month is correct
+			Days are counted correctly
+		
+Invalid tests
+	1. Enter invalid year
+		Enter year < 1 , year > 9999
+		check if output is invalid
+	
+	2. Enter invalid month
+		Enter month < 1 , month > 12
+		check if output is invalid
+		
+	3. Enter invalid day
+		Enter day < 1 , day > days_in_a_month
+			  day < 1 , day > days_in_a_month_leap_year
+	
