@@ -4,7 +4,7 @@ Valid inputs:
 	-Month in range 1-12
 	-Day in range 1-30 for (4,6,9,11) months, for February 1-28 (1-29 in leap year) 
 	 and 1-31 for the rest
-	-Because validation of input is in separate metods in test mode is possible to enter invalid inputs without any error
+	-Because validation of input is in separate metods in test mode it's possible to enter invalid inputs without any error
 
 
 Valid tests
