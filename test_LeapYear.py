@@ -9,6 +9,8 @@ def tests_how_many_days_in_a_month(year, month, expected):
 @pytest.mark.parametrize("year,expected", [(2000, True), (4, True), (4, False),(1900, False), (3, False), (3, True)])
 def test_is_leap_year(year, expected):
     assert LeapYear1.is_leap_year(year) == expected
+    if expected == expected:
+        print("Is it a leap year?: ",expected)
 
 @pytest.mark.parametrize("year,month,day,expected", [(2000,12,31,366), (1900,12,31,365), (1900,12,31,366)])
 def test_which_day_of_the_year(year,month,day,expected):
@@ -30,34 +32,42 @@ def test_end_to_end_fail():
     assert LeapYear1.how_many_days_in_a_month(year,month) == LeapYear1.days_in_a_month_leap_year[month - 1]
     assert LeapYear1.which_day_of_the_year(year,month,day) == 365
 
-def test_year_input(monkeypatch):
-    monkeypatch.setattr('builtins.input', lambda _: 1)
-    year = int(input("Enter year: "))    
+def test_year_input1(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 10000)
+    year = int(input("Enter year: "))
+    if year > 9999:
+        print("year must be between 1 - 9999") 
+        monkeypatch.setattr('builtins.input', lambda _: 1)
+        year = int(input("Enter year: "))
     assert LeapYear1.check_if_year_is_valid() == year
 
-def test_year_input(monkeypatch):
+def test_year_input2(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 9999)
     year = int(input("Enter year: "))    
     assert LeapYear1.check_if_year_is_valid() == year
 
-def test_month_input(monkeypatch):
+def test_month_input1(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 1)
     month = int(input("Enter month: "))    
     assert LeapYear1.check_if_month_is_valid() == month
 
-def test_month_input(monkeypatch):
-    monkeypatch.setattr('builtins.input', lambda _: 12)
-    month = int(input("Enter month: "))    
+def test_month_input2(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 13)
+    month = int(input("Enter month: "))
+    if month > 12:
+        print("Month must be between 1 - 12")
+        monkeypatch.setattr('builtins.input', lambda _: 12)
+        month = int(input("Enter month: "))
     assert LeapYear1.check_if_month_is_valid() == month
 
-def test_day_input(monkeypatch):
+def test_day_input1(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 1)
     LeapYear1.year = 2000
     LeapYear1.month = 1
     day = int(input("Enter day: "))    
     assert LeapYear1.check_if_day_is_valid() == day
 
-def test_day_input(monkeypatch):
+def test_day_input2(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 31)
     LeapYear1.year = 2000
     LeapYear1.month = 1
