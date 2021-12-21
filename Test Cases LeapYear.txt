@@ -1,47 +1,83 @@
+Valid inputs:
+	-Only numbers
+	-Year in range 1-9999
+	-Month in range 1-12
+	-Day in range 1-30 for (4,6,9,11) months, for February 1-28 (1-29 in leap year) 
+	 and 1-31 for the rest
+	-Because validation of input is in separate metods in test mode is possible to enter invalid inputs without any error
+
+
 Valid tests
 	1.Enter valid year
-		Input Year in range 1 - 9999
+		Input Year 1
+		Check if output doesn't shows any error
+	
+	2.Enter valid year
+		Input Year 9999
 		Check if output is valid
 
-	2. Enter valid month
-		Input month in range 1 - 12
-		Check if output is valid
-
-	3. Enter valid day
-		Input day in range 1 - days_in_a_month
-						   1 - days_in_a_month_leap_year
+	3. Enter valid month
+		Input month 1
 		Check if output is valid
 		
-	4. Check if it's a leap year with valid input
-		Enter valid leap year
+	4. Enter valid month
+		Input month 12
+		Check if output is valid
+
+	5. Enter valid day
+		Input day 1
+		Check if output is valid
+	
+	6. Enter valid day
+		Input day 31
+		Check if output is valid
+		
+	7. Check if it's a leap year with valid input
+		Enter year 4
 		check if output is True
 	
-	5. Check if it's not a leap year with valid input
-		Enter valid non-leap year
+	8. Check if it's a leap year with valid input
+		Enter year 2000
+		check if output is True
+	
+	9. Check if it's not a leap year with valid input
+		Enter year 3
 		check if output is False
 	
-	6. Check if days in month are correct
-		Enter valid year and month
-		Check if output shows correct number of days in chosen month
+	10. Check if it's not a leap year with valid input
+		Enter year 1900
+		check if output is False
 	
-	7. Check number of days in February in Leap year
-		Enter valid leap year
+	11. Check if days in month are correct
+		Enter year 1900 and month 1
+		Check if output is 31
+		
+	12. Check if days in month are correct
+		Enter year 1900 and month 12
+		Check if output is 31
+	
+	13. Check number of days in February in Leap year
+		Enter year 2000
 		check if output shows 29
 	
-	8. Check number of days in February in non-leap year
-		Enter valid non-leap year
+	14. Check number of days in February in non-leap year
+		Enter year 1900
 		check if output shows 28
 	
-	9. Check which_day_of_the_year is correct
-		Enter valid year, month and day example year = 4 month = 2 day = 29
-		Check if output shows correct value example = 60
+	15. Check that the days are counted correctly
+		Enter valid year, month and day  year = 2000 month = 12 day = 31
+		Check if output shows 366
 	
-	10. End to End
+	16. Check that the days are counted correctly
+		Enter valid year, month and day year = 1900 month = 12 day = 31
+		Check if output shows 365
+	
+	17. End to End valid input
 		Enter valid year, month and day example year = 2020 month = 12 day = 31
 		Check if in output:
-			Year is Leap or not
-			Number of days in month is correct
-			Days are counted correctly
+			Year is Leap
+			Number of days in month is 31
+			Day of the year is 366
 		
 Invalid tests
 	1. Enter invalid year
